@@ -1,0 +1,68 @@
+    No "jQuery" existe uma função própria para exibir um conteúdo oculto e uma função própria para esconder um conteúdo 
+visível, para exibit a função é chamada através de: ".show();" e para esconder é chamado através de: ".hide();" isso ajuda muito pois não precisamos ficar alterando manualmente com CSS e etc.
+
+    No "jQuery" podemos usar a função ".show()" para exibir um conteúdo que quisermos deixar em oculto e depois de 
+determinada ação ele aparecer, e também temos a função ".hide()" que faz o contrário da primeira, nesta se o conteúdo estiver aparecendo, ele é ocultado.
+    É possível também alternar entre esses dois comprotamentos usando a função ".toggle()" é possível exibir/ocultar
+conteúdos com o "jQuery", se o conteúdo estiver exibido essa função oculta, se estiver oculto ela exibe.
+
+    No "jQuery" existe uma função que faz uma animação na página ao exibir um conteúdo extra por exemplo, o efeito 
+apresentado é de um slide, para fazer o efeito do slide para baixo usamos a função ".slideDown(xx)" e para cima usamos "slideUp(xx)" sendo que no lugar de *xx* poodemos colocar um tempo em *ms* para que a ação seja completada, também existe uma função que alterna entre os dois comportamentos acima, que é a "slideToggle(xx)" segue a mesma sintaxe.
+
+    A função ".fadeOut()" do "jQuery" faz com que o elemento em questão vá esmaecendo aos poucos até que suma
+completamente deixando uma sensação mais suave.
+    *Obs: Essa função não deleta completamente o conteúdo, ela apenas oculta da página deixando com o atributo: 
+"display: none;" mas não é uma exclusão completa.
+    Para evitar bugs e comportamentos indesejados, existe uma função no "jQuery" que faz com que pare toda a animação que
+estava sendo executada e execute só a próxima, um bom cenário apra aplicar esse tipo de comportamento é com uso de botões paara fazer animações, no caso se clicarmos várias vezes no botão sem a função acima, ele executaria várias animações repetidas vezes mesmo se parassemos de clicar, já com a função, independentemente de quantas vezes clicarmos no botão, ele só executará a animação uma única vez.   Exemplo em: "js/placar.js" linha 43.
+
+    Podemos criar uma animação de rolagem com o JS/jQuery para fazermos isso usamos a função: 
+"$("html, body).animate({xxx},ms);" onde no lugar de *xxx* colocamos a propriedade que faz a própria animação de rolagem chamada ("scrollTop: *xx*" esta faz a rolagem para o topo) onde no luigar de *xx* coloca-se o valor que queremos mover o objeto selecionado em px, mas também podemos colocar o valor de uma variável como por exemplo se salvarmos a posição de outro elemento em uma variável podemos reutilizar este valor diretamente como por exemplo marcando um objeto e capturando o ".offset()" do mesmo, pode ser tanto do topo ".top;" quanto das laterais ".left;".     Além dessa propriedade, no lugar de *ms* colocamos o tempo que queremos que demore esta animação.
+    *Obs: É importante lembrar que se quisermos mover todo o conteúdo da página, é necessário usar a seguinte sintaxe:
+"$("html, body")...." para que seja selecionado tanto o corpo do HTML quanto todo o documento, se não fizer dessa forma, nada acontecerá.
+
+    É possível criar variáveis em forma de "objetos" esses objetos são usados em determinadas situações como por exemplo
+enviar dados em requisições AJAX etc... para criar um objeto no JS precisamos coloca-lo dentro de uma variável da seguinte forma: "var dados = {...};" e dentro das chaves é onde colocamos todo o conteúdo do nosso objeto.
+
+    Podemos fazer requisições "AJAX" através do "jQuery" para isso usamos a função ".get()" com a seguite sintaxe: 
+"$.get("aqui colocamos o link que queremos acessar", function(data){aqui o que queremos que aconteça com o retorno});" 
+no parâmetro da função anônima que esta escrito *data*, este data é como se fosse um atributo que simboliza todo conteúdo buscado pela requisição, ou seja, se colocarmos ele como parâmetro e fizermos um console.log(data) ele nos retornará todo o conteúdo que tinha no link que requisitamos.
+    *Obs: Tem comentarios feitos no arquvio: "js/frase.js" na linha 22.
+    Podemos também enviar dados para retornarmos dados específicos em uma pesquisa por exemplo, para fazermos isso
+usamos um terceiro parâmetro (atenção pois o parâmetro de envio de dados deve ser o segundo, pois o último sempre será o retorno da requisição) este parâmetro deve ser uma variável "objeto" sendo assim nossa requisição irá pegar o conteúdo deste objeto enviar para o destino da requisição e ele nos retornará especificamente o conteúdo buscado.    Exemplo:
+"$("URL-para-requisição",dadosEnviados,function(){...});"   aqui neste código nós visitamos um determinado site, levamos o conteúdo da variável *dadosEnviados* e retornamos com uma função.    O exemplo prático está em: 
+"js/frase.js" linha: 28 à 34.
+
+    No JS, temos algumas opções para sortear um número aleatório, são elas: "Math.random()" esta sorteia um número
+fracionado aleatório, para sortear um número inteiro basta usar a seguinte sintaxe: "Math.random()*10" ou seja ao multiplicar o resultado que viria por 10, nós conseguiremos um número entre 0 e 10 mas ainda sim será um número fracionado.        Para retirar esse fracionado do número temos 2 opções, uma delas é com o:
+("Math.round(Math.randon()*10);" aqui tiramos o resultado arredondado para mais de um número entre 0 e 10) e também temos:  ("Math.floor(Math.random()*10);" aqui tiramos o resultado arredondado para menos de um número entre 0 e 10).
+
+    É possível capturar erros com o "jQuery" e exibir alertas ou mensagens para o usuário ser notificado que algo deu
+errado, para isso, usamos a função ".fail(function(){...});" isto é, ao ocorrer algum tipo de erro, o nosso código executará a função contida dentro da função ".fail()" dentro da função anônima podemos colocar qualquer coisa que quisermos, desde poup-ups á mensagens e apresentações de textos ocultos do HTML através da propriedade CSS:
+"display:none;"
+
+    Existe uma função no "jQuery" que possibilita ao DEV agilizar a programação de códigos repetitivos, isto é,
+se fossemos escrever um código já existente na mesma função, porém em locais diferentes da mesma, poderiamos simplesmente usar a função ".always(function(){...});" como o próprio nome já diz, independente do que acontecer na função acima, a ".always" será executada obrigatoriamente sempre, dentro da função ".always" podemos criar mais uma função com intuito de fazer algo.
+
+    Com o "jQuery" podemos selecionar filhos de elementos com alguns códigos e lógicas, são elas:
+Primeiro criamos uma variável que recebe como valor o elemento pai de quem vamos procurar, sem seguida usamos um ".each"
+que tem o mesmo intuito do "for.each" de JS, e dentro desse ".each" criamos uma variável que recebe como valor a busca do filho, segue a sintaxe de exemplo: 
+"var.each(function(){var ... = $(this).find("tag-pai:nth-child(numero ordinal da tag filho que queremos)").text();   )};"
+no código acima, nós decretamos a variável *...* que recebeu o contexto "this" que se refere a variável "var" e dentro do de var que continha uma estruta HTML, procuramos a tag filho tomando como base a tag pai da mesma e especificando qual a tag filho através do numero ordinal, usamos o ".text()" para capturar o conteúdo desse filho.
+    *Obs: ("<tag>:nth-child(x)")  este código nada mais é do que um seletor CSS utilizando em JS para fazer seleção de 
+elementos filhos de outros, no qual utilizamos o nome da tag pai no lugar de <tag> e colocamos a ordem do filho que queremos "seja o primeiro filho da tag pai, o segundo, o terceiro, etc.. em numero" dentro dos parênteses onde tem o *x*.
+
+    No "jQuery" nós podemos enviar dados para determinada URL afim de salvar este dados apra não serem perdidos, para
+isso usamos uma função chamada "$.post()" ela tem a mesma sintaxe da requisição AJAX "$.get()" a diferença é que a 
+".post()" é focada em salvar os dados na URL destino, a sintaxe é a seguinte:
+"$.post("URL de destino",var,function(){...}); var = variável com os dados salvos em forma de objeto, function = uma função que criamos para receber algum retorno de que deu certo nossa requisição.
+    *Obs: O envio dos dados deve ser feito através do segundo parâmetro da requisição e deve ser feito através de uma
+variável que seja um objeto JS, caso contrário não funcionará.
+
+    Com "jQuery" é possível criar diversas coisas através de ferramentas, sites e etc que são combinadas com jQuery para
+facilitar a vida do programador, uma dessas ferramentas é o "slick" uma ferramenta de animações em slides, pode ser obtida através do site: "https://kenwheeler.github.io/slick/" basta seguir os passos, fazer download da pasta do mesmo, fazer o script e o CSS do mesmo e se tudo for feito certo funcionará. no próprio site tem passo a passo.
+    Outro plug-in que temos para fazer melhorias dessa vez em relação á <input> do tipo *select* é através do site:
+"https://selectize.dev/" com esta ferramenta diminuimos drasticamente a quantidade de código que fazemos para configurar <input> do tipo citado acima, baixar o código JS e CSS através do github indicado no site, colocar os scripts necessários e se necessário fazer melhorias no CSS.
+    Temos ainda outro plug-in interessante, desta vez para mostrarmos notificações dinâmicas para o usuário em forma de 
+balões, poup-ups etc... Temos acesso a esse plug-in através do site: "https://www.heteroclito.fr/modules/tooltipster/" 
+e seguimos o mesmo conceito de aplicação dos outros, baixamos o plug-in na máquina, passamos as pastas necessárias de JS e CSS, fazemos o script necessário como condiz na própria página no passo á passo, e depois, se necessário, estilizamos a gosto.

@@ -1,0 +1,12 @@
+    Os eventos a serem escutados podem ser seguidos de [ ".on("xxx", function(){..})" e digitados no lugar de *xxx*
+este faz com que seja escutado repetidas vezes o evento citado sempre que o mesmo ocorrer] [ .one("xxx", function(){..}) este fazer com que o evento citado seja escutado apenas uma vez] [.xxxx(function(){..}) este faz o mesmo que a primeira forma, apenas muda que e menos verboso utilizando um tipo de 'shorthand'].
+
+    Abaixo segue alguns eventos mais conhecidos e usados usando o jQuery:
+
+"clicl": detecta o click do usuário em determinado elemento.
+
+"dblclick": detecta o duplo click do usuário em determinado elemento.
+
+"input": detecta cada inserção de dado do usuário através do teclado.
+
+"focus": detecta quando o usuário abre o foco em determinado elemento.

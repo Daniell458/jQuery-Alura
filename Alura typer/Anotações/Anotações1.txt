@@ -1,0 +1,86 @@
+    O "jQuery" pode ser baixado através do site oficial: "https://jquery.com"
+    O "jQuery" deve ser linkado no HTML antes de todos os arquivos JS para que seja primeiro carregado todas as
+instruções do "jQuery".
+    O "jQuery" tem como objetivo a compatilidade entre todos os navegadores, e a produção aumentando a efetividade dos
+DEV's.
+    O "jQuery" é um tradutor utilizado para fazer diferentes interpretações para cada navegador fazendo com que cada um 
+funcione corretamente sem nenhum erro pela diferenças entre eles. 
+    O "jQuery" possui um subtítulo de ênfase chamado *write less, do more* que singifica "escreva menos, faça mais" e é 
+exatamente isso que acontece na prática, ele reduz drasticamente a quantidade de código que escrevemos melhorando assim a efetividade e produção do DEV.
+    O "jQuery" tem várias versões e tipos disponíveis para download (é preciso baixar uma delas para poder trabalhar com 
+esse framework) dentre as opções, os mais comuns são formato compacto (de produção) este é voltado para colocar direto no servidor economizando downloads para o usuário, neste todo o código é escrito em uma linha enorme ficando dificil de fazer dissernimento do código.	
+    O segundo é o não compacto (para desenvolvimento) este é voltado para desenvolvedor, neste é possível ver todas as
+variáveis e código completo organizado.
+
+    Podemos selecionar um elemento do mundo HTML com o "jQuery" de forma parecida como fazemos com o JS, para isso usamos
+a função seletora "jQuery("xx")" onde no lugar de *xx* colocamos o seletor CSS do elemento que queremos selecionar.
+    Mas também podemos usar o atalho ("$" dolar, ele é um *short-range* "um atalho" para a função seletora) para que
+tem mesma funcionalidade da função acima porém é menos verbosa e mais produtiva visto que economiza códigos.
+    Vale ressaltar que não estamos selecionando o conteúdo contido no elemento mas sim o "DOM" do mesmo apenas a
+estrutura, sendo assim e necessario usar a função abaixo para acessarmos o conteúdo do elemento.
+    Também existe a possibilidade de selecionarmos elementos filhos apartir de classes dos pais desse elemento, fazemos
+isso usando o "$("classe do elemento pai").find("elemento filho que queremos selecionar")" dessa forma ele irá passar por toda a estrutura do código até achar o elemento que colocamos no parênteses de ".find()".
+
+    Podemos também obter o valor contido naquele elemento que nós selecionamos, no JS fazemos isso através do
+"textContet" já no "jQuery" utilizamos a função ".text()" que nos retorna o valor daquele elemento.
+    Com essa mesma função ".text()" é possível alterar o conteúdo de texto contido dentro do elemento selecionado, para
+fazer isso, dentro dos parênteses nós colocamos o que queremos que apareça, podemos colocar ("strings" fazemos isso usando as áspas "") e também podemos colocar conteúdos contido dentro de outras variáveis, para isso basta colocar o nome da variável em questão dentro dos parênteses sem áspas.
+    A função acima só funciona se o conteúdo a ser acessado estiver dentro de uma tag do HTML diretamente, caso elas
+esteja em um "input" por exemplo ela não funcionará, para capturarmos o valor contido dentro de um "input" precisamos utilizar a função/atalho do jQuery chamada ".val()" nada mais é do que a mesma função ".value" do JS, com ela podemos ter acesso ao conteúdo de um "input" de um <textarea> e afins.
+    Também temos a função ".attr()" esta por sua vez tem como objetivo selecionar o atributo de um elemento especifico
+que quisermos, ela também nos permite modificar o mesmo através de seus parênteses.
+    *Obs: Podemos utilizar o atalho: ".removeAttr("");" porém este somente é utilizado para remover determinado atributos
+de um elemento, atributo estes que descrevemos dentro das áspas dos parênteses.
+
+    É possível quebramos as frases dividindo palavra por palavra através dos espaços, para fazermos isso usamos uma
+função do JS chamada ".split("xx")" que é guardada em uma variável e no lugar de *xx* colocamos a referênia que o JS fará para quebrar as frases, no caso colocamos um espaço no lugar do *xx* sendo assim sempre que houver um espaçamento ele quebrará e retornará como um item de "array" para nossa variável.
+    Para essa lógica ficar ainda melhor, envez de colocarmos um espaço vazio entre as áspas, nós podemos colocar uma
+exepressão regular: "/\S+/" essa exepressão fará a distinção de apenas 1 espaço e vários espaços, com isso podemos contar a quantidade de palavras contidas em um campo sendo que se digitarmos vários espaços ele contará apenas 1 palavra. 
+
+    Para adicionar um escutador de eventos no "jQuery", nós utilizamos a função ".on("xx", function(){..})" onde no lugar
+de *xx* colocamos qual evento queremos capturar do usuário, no caso de click colocamos a palavra "click" dentro das áspas de *xx*, pode também ser o evento de digitação chamado "input" sempre que digitarmos algo o navegador irá capturar esse evento, como segundo parâmetro passamos a função e mapeamos ela caso seja uma função anônima.
+    Temos também o metodo de capturar apenas 1 vez o evento do usuário para não ocorrer buggs indesejados, para isso 
+usamos a função ".one("",function(){..})" esta função irá capturar apenas 1x o evento feito pelo usuário.
+
+    No JS existe a função "setInterval(function(){...}, ms)" que tem como objetivo executar uma função em determinados
+instantes, função esta que é passada como primeiro parâmetro nos parênteses, e como segundo parâmetro, no lugar de *ms* passamos o tempo que se deve percorrer para que esta função seja executada, por padrão, o tempo e deduzido em (*ms* milissegundos).
+    Podemos também parar esta função acima quando por exemplo queremos fazer uma contagem regressiva e quando chegar ao 
+valor de 0 ele pare e não conte valores negativos, para isso, usamos a função "clearInterval(*id*)" esta por sua vez recebe como parâmetro o *id* do "setInterval" que queremos parar, para pegarmos o id basta colocamos nossa função de "setInterval" dentro de uma variável e depois colocar o nome desta variável dentro dos parênteses da função "clearInterval".      Segue exemplo no arquivo: "js/main.js" linha 16 á 25.
+
+    O "jQuery" possui uma função chamada: "$(document).ready(function(){..})" esta função é utilizada para executarmos
+linhas de códigos que queremos que sejam executadas quando a página estiver carregada, atrelamos dentro dessa função o nome de outras funções/eventos que quisermos que seja executado.
+    *Obs: Existe um atalho para essa funcionalidade, ele é chamado através de: "$(function(){...})" e dentro da função
+deve ir todos os código que queremos executar, assim teremos o mesmo resultado com menos código.
+
+    É possível mexermos no CSS com o "jQuery" para isso usamos a função: ".css("xxx,yyy")" onde no lugar de *xxx*
+colocamos qual propriedade do CSS queremos utilizar e no lugar de *yyy* colocamos o valor desta propriedade, esta forma não é a mais adequada visto que o correto é estilizar sempre pelo CSS diretamente e se necessário apenas adicionar classes pelo JS/jQuery.
+
+    Podemos também adiocionar classes através do "jQuery", para isso usamos a função: ".addClass("")" que como o próprio
+nome sugere ela cria uma classe para podermos estilzia-la no CSS, o nome desta classe vai entre os parênteses dentro das áspas.
+    Podemos também remover uma classe criada pelo JS/jQuery através da função: ".removeClass("")" onde dentro das áspas
+colocamos o nome da classe que queremos remover.
+    *Obs: Ao criar ou remover uma classso no JS ou "jQuery" nós não utilizamos o seletor CSS "." ou "#", pois ali
+estamos criando ou removendo a classe sendo assim deve ser passado apenas o nome da mesma.
+    Outra forma de adicionar/remover classes pelo jQuery e essa é uma exclusividade da framework, é através da função
+".toggleClass("")" que tem como objetivo criar ou remover uma classe no documento, se a classe já existir, essa função irá remove-la quando chamada, se a função não existir, essa função irá adiociona-la, segue os mesmos conceitos para inserção do nome da classe que é dentro das áspas.
+
+    É possível fazer comparações de conteúdos do nosso código para uma verificação por exemplo, para isso podemos usar a 
+função: ".substr(x,y)" onde no lugar de *x* colocamos onde se inicia a comparação e no lugar de *y* até onde a comparação deverá ir, no caso se quisermos comparar um texto completo colocamos o ".length" 
+    *Obs: Esta função ".substr(x,y)" nos lembra o conceito de "expressao regular" do JS puro, tem o mesmo intuito e a
+mesma sintaxe.
+    Com as evoluções do JS, temos outro método de fazer esta comparação de conteúdo acima, através da função:
+"if(xxx.startsWith(yyy))" podemos verificar o seguinte: SE(frase-modelo.startsWith(frase-digitada){...}) ou seja, se a 'frase-digitada' for igual a 'frase-modelo' então executa o mapeamento.      Lembrando que no lugar de *xxx* deve se colocar a frase modelo que queremos comparar e no lugar de *yyy* dentro dos parênteses deve se colocar o conteúdo que está sendo digitado.
+
+    Para adicionar novos itens em uma tabela do HTML através do "jQuery" podemos usar a função ".append()" essa função
+faz com que se adicione algo dentro de algum elemento, a sintaxe deste código é = "var-pai.append(var para adicionar o elemento)" sendo assim a variável que vai dentro dos parênteses de ".append" é o que será criado, já a variável pai é o elemento que receberá como filho essa nossa adição.
+    *Obgs: a função ".append()" sempre adicionará elementos novos abaixo dos existentes, para adicionar acima dos mesmos 
+como num placar, usamos a função ".prepend()", esta usa a mesma sintaxe só muda a forma como é exibida.
+
+    Podemos interromper ações padrões que seriam executadas no navegador através de algum código, para impedir que isso
+aconteça podemos usar a função ".preventDefault()" esta função interromperá todo comportamento padrão para que não aconteça ações indesejadas.
+
+    Podemos subir pelos elementos até chegar a um determinado elemento que queremos como por exemplo para remover algum
+elemento do HTML, para fazer isso usamos a função do "jQuery": ".parent()" cade vez que usarmos essa função ela subirá um nível acima pegando assim o pai do elemento em que estamos.
+
+    No "jQuery" nós podemos criar novos elementos HTML através da seguinte sintaxe: "$("<tag>");" ou seja da mesma forma
+que fazemos para selecionar um elemento qualquer, nós fazemos para criar um, a diferença é que para criar devemos colocar os sinais de "<" e ">" exatamente como fazemos num documento HTML.

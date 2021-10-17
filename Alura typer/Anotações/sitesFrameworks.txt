@@ -1,0 +1,7 @@
+    Framework's de programação:
+https://jquery.com/
+
+    Framework's de edição/formatação "front-end":
+
+https://materializecss.com/
+https://getbootstrap.com/
